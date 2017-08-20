@@ -1,0 +1,11 @@
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\obj\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.csproj.CoreCompileInputs.cache
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\obj\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.AssemblyInfoInputs.cache
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\obj\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.AssemblyInfo.cs
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\bin\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.deps.json
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\bin\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.runtimeconfig.json
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\bin\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.runtimeconfig.dev.json
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\bin\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.dll
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\bin\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.pdb
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\obj\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.dll
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\obj\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.pdb
+C:\Users\mate\Source\Repos\ProjectIvy.CurrencySync\ProjectIvy.CurrencySync\src\ProjectIvy.CurrencySync\obj\Debug\netcoreapp2.0\ProjectIvy.CurrencySync.csprojResolveAssemblyReference.cache
