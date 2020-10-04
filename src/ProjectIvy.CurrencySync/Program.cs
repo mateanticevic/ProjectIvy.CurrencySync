@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using ProjectIvy.CurrencySync.Services.Fixer;
-using System.IO;
+﻿using ProjectIvy.CurrencySync.Services.Fixer;
 using System.Threading.Tasks;
 using System;
 
@@ -8,46 +6,35 @@ namespace ProjectIvy.CurrencySync
 {
     public class Program
     {
-        public static IConfigurationRoot Configuration { get; set; }
-
-        public static void Main(string[] args)
+        public async static void Main(string[] args)
         {
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-                                                    .AddJsonFile("appsettings.json");
-            Configuration = builder.Build();
+            string connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
-            string connectionString = Configuration["ConnectionStrings:MainDb"].ToString();
+            var date = DateTime.Now.Date;
+            var last = await DbHandler.GetLastExchangeRateDate(connectionString);
 
-            var date = DbHandler.GetLastExchangeRateDate(connectionString).Result;
-
-            while (!Equals(date.Date, DateTime.Now.Date))
+            while (date > last)
             {
                 try
                 {
-                    var work = ResolveRatesOnDay(connectionString, date);
-                    work.Wait();
+                    await ResolveRatesOnDay(connectionString, date);
 
-                    Console.WriteLine($"Day {date.ToString("yyyy-MM-dd")} ok.");
+                    Console.WriteLine($"Day {date:yyyy-MM-dd} ok.");
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    Console.WriteLine("Duplicate day.");
+                    Console.WriteLine($"Something went wrong, message: {e.Message}");
                 }
 
-                date = date.AddDays(1);
+                date = date.AddDays(-1);
             }
         }
 
         public static async Task ResolveRatesOnDay(string connectionString, DateTime day)
         {
-            ICurrencyService x = new FixerService();
-
-            var rates = await x.GetRatesOnDate(day);
-
-            foreach (var rate in rates)
-            {
-                await DbHandler.InsertCurrencyExchangeRate(connectionString, rate);
-            }
+            string apiKey = Environment.GetEnvironmentVariable("API_KEY");
+            var rates = await new FixerService().GetRatesOnDate(day, apiKey);
+            await DbHandler.InsertOrUpdateExchangeRate(connectionString, rates);
         }
     }
 }

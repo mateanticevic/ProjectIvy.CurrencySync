@@ -1,0 +1,15 @@
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/bin/Debug/netcoreapp2.0/win10-x64/hostpolicy.dll
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/bin/Debug/netcoreapp2.0/win10-x64/hostfxr.dll
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/bin/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.exe
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/bin/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.deps.json
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/bin/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.runtimeconfig.json
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/bin/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.runtimeconfig.dev.json
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/bin/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.dll
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/bin/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.pdb
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/obj/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.csprojAssemblyReference.cache
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/obj/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.AssemblyInfoInputs.cache
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/obj/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.AssemblyInfo.cs
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/obj/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.csproj.CoreCompileInputs.cache
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/obj/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.dll
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/obj/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.pdb
+/Users/manticevic/Git.MA/ProjectIvy.CurrencySync/src/ProjectIvy.CurrencySync/obj/Debug/netcoreapp2.0/win10-x64/ProjectIvy.CurrencySync.genruntimeconfig.cache

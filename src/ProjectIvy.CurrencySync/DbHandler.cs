@@ -3,6 +3,7 @@ using ProjectIvy.CurrencySync.Models;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System;
+using ProjectIvy.CurrencySync.Services.Fixer.Models;
 
 namespace ProjectIvy.CurrencySync
 {
@@ -18,27 +19,37 @@ namespace ProjectIvy.CurrencySync
             }
         }
 
-        public static async Task<bool> InsertCurrencyExchangeRate(string connectionString, ExchangeRate rate)
+        public static async Task InsertOrUpdateExchangeRate(string connectionString, RatesOnDate ratesOnDate)
         {
-            var parameters = new
+            foreach (var rate in ratesOnDate.Rates)
             {
-                from = rate.FromCurrency,
-                to = rate.ToCurrency,
-                date = rate.Date.ToString("yyyy-MM-dd"),
-                rate = rate.Rate
-            };
+                var parameters = new
+                {
+                    from = ratesOnDate.Base,
+                    to = rate.Key,
+                    date = ratesOnDate.Date,
+                    rate = rate.Value
+                };
 
-            string sql = @"DECLARE @fromId INT = (SELECT TOP 1 Id FROM Common.Currency WHERE Code = @from)
-                           DECLARE @toId INT = (SELECT TOP 1 Id FROM Common.Currency WHERE Code = @to)
+                string sql = @"DECLARE @fromId INT = (SELECT TOP 1 Id FROM Common.Currency WHERE Code = @from)
+                               DECLARE @toId INT = (SELECT TOP 1 Id FROM Common.Currency WHERE Code = @to)
 
-                           INSERT INTO Common.CurrencyRate (FromCurrencyId, ToCurrencyId, Rate, Timestamp)
-                           VALUES (@fromId, @toId, @rate, @date)";
+                               IF (@toId IS NULL)
+                               BEGIN
+                                INSERT INTO Common.Currency (ValueId, Symbol, Code, [Name]) VALUES (@to, @to, @to, @to)
+                                SET @toId = SCOPE_IDENTITY()
+                               END
 
-            var command = new CommandDefinition(sql, parameters);
+                               IF (EXISTS(SELECT TOP 1 * FROM Common.CurrencyRate WHERE FromCurrencyId = @fromId AND ToCurrencyId = @toId AND Timestamp = @date))
+                                UPDATE Common.CurrencyRate SET Rate = @rate WHERE FromCurrencyId = @fromId AND ToCurrencyId = @toId AND Timestamp = @date 
+                               ELSE
+                                INSERT INTO Common.CurrencyRate (FromCurrencyId, ToCurrencyId, Rate, Timestamp)
+                                VALUES (@fromId, @toId, @rate, @date)";
 
-            using (var db = new SqlConnection(connectionString))
-            {
-                return await db.ExecuteScalarAsync<bool>(command);
+                using (var sqlConnection = new SqlConnection(connectionString))
+                {
+                    await sqlConnection.ExecuteScalarAsync<bool>(sql, parameters);
+                }
             }
         }
     }
