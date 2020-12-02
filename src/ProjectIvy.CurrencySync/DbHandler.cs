@@ -1,9 +1,8 @@
 ﻿using Dapper;
-using ProjectIvy.CurrencySync.Models;
-using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System;
 using ProjectIvy.CurrencySync.Services.Fixer.Models;
+using Microsoft.Data.SqlClient;
 
 namespace ProjectIvy.CurrencySync
 {

@@ -6,7 +6,7 @@ namespace ProjectIvy.CurrencySync
 {
     public class Program
     {
-        public async static void Main(string[] args)
+        public async static Task Main(string[] args)
         {
             string connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
