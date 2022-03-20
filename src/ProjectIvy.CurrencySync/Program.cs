@@ -20,8 +20,8 @@ namespace ProjectIvy.CurrencySync
                                       .WriteTo.Graylog(new GraylogSinkOptions()
                                       {
                                           Facility = "project-ivy-currency-sync",
-                                          HostnameOrAddress = "10.0.1.24",
-                                          Port = 12202,
+                                          HostnameOrAddress = Environment.GetEnvironmentVariable("GRAYLOG_HOST"),
+                                          Port = Convert.ToInt32(Environment.GetEnvironmentVariable("GRAYLOG_PORT")),
                                           TransportType = TransportType.Udp
                                       })
                                       .CreateLogger();
